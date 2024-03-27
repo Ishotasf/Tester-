@@ -166,7 +166,7 @@ TOKEN_FILE = "resources/auths/auth_token.txt"
 )
 async def send(eve):
     key, name = (eve.data_match.group(1)).decode("UTF-8").split("_")
-    thumb = "https://graph.org/file/60408fea8439e6702674d.jpg"
+    thumb = "https://telegra.ph/file/076a5b0475e866132af70.jpg"
     await eve.answer("■ Sending ■")
     data = f"uh_{key}_"
     index = None
@@ -211,12 +211,12 @@ async def update(eve):
             heroku_applications = heroku.apps()
         except BaseException as er:
             LOGS.exception(er)
-            return await eve.edit("`Wrong HEROKU_API.`")
+            return await eve.edit("Wrong HEROKU_API.")
         for app in heroku_applications:
             if app.name == app_name:
                 heroku_app = app
         if not heroku_app:
-            await eve.edit("`Wrong HEROKU_APP_NAME.`")
+            await eve.edit("Wrong HEROKU_APP_NAME.")
             repo.__del__()
             return
         await eve.edit(get_string("clst_1"))
@@ -233,14 +233,14 @@ async def update(eve):
         try:
             remote.push(refspec=f"HEAD:refs/heads/{ac_br}", force=True)
         except GitCommandError as error:
-            await eve.edit(f"`Ini log kesalahannya:\n{error}`")
+            await eve.edit(f"Ini log kesalahannya:\n{error}")
             repo.__del__()
             return
-        await eve.edit("`Berhasil Diperbarui!\nMemulai ulang, harap tunggu...`")
+        await eve.edit("Berhasil Diperbarui!\nMemulai ulang, harap tunggu...")
     else:
         await eve.edit(get_string("clst_1"))
         await bash("git pull && pip3 install -r requirements.txt")
-        execl(sys.executable, sys.executable, "-m", "Ayra")
+        execl(sys.executable, sys.executable, "-m", "Ryn")
 
 
 @callback(re.compile("changes(.*)"), owner=True)
@@ -254,12 +254,12 @@ async def changes(okk):
     )
     cli = "\n\nKlik tombol di bawah untuk memperbarui!"
     if not match:
-        thumb = "https://graph.org/file/60408fea8439e6702674d.jpg"
+        thumb = "https://telegra.ph/file/076a5b0475e866132af70.jpg"
         try:
             if len(tl_chnglog) > 700:
                 tl_chnglog = f"{tl_chnglog[:700]}..."
                 button.append([Button.inline("Lihat Selesai", "changesall")])
-            await okk.edit("• Menulis Changelog 📝 •")
+            await okk.edit("Menulis Changelog 📝")
             img = await Carbon(
                 file_name="changelog",
                 code=tl_chnglog,
@@ -267,7 +267,7 @@ async def changes(okk):
                 language="md",
             )
             return await okk.edit(
-                f"**• Naya Userbot •**{cli}",
+                f"**Ryn Userbot**{cli}",
                 file=thumb,
                 buttons=button,
                 force_document=True,
@@ -718,7 +718,7 @@ async def heheh(event):
     err = ""
     async with event.client.conversation(event.chat_id) as conv:
         await conv.send_message(
-            "Kirim ID Obrolan, yang ingin Anda gunakan untuk **Wajib Join** . Sebelum pengguna menggunakan Bot Anda\n\n• Kirim /clear untuk menonaktifkan **Wajib Join** PM Bot..\nKirim /cancel untuk batalkan.."
+            "Kirim ID Obrolan, yang ingin Anda gunakan untuk **Wajib Join** . Sebelum pengguna menggunakan Bot Anda\n\n▢ Kirim /clear untuk menonaktifkan **Wajib Join** PM Bot..\nKirim /cancel untuk batalkan.."
         )
         await conv.send_message(
             "Contoh ID Obrolan: \n`-1001234567\n-100778888`\n\nUntuk Banyak Obrolan."
