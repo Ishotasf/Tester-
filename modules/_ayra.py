@@ -28,7 +28,7 @@ AYSTRING = """🎇 **Thanks for Deploying Ryn-Userbot**
 
 @ayra_cmd(pattern="Repo$")
 async def useAyra(rs):
-    button = Button.inline("Start >>", "initft_2")
+    button = Button.inline("Start", "initft_2")
     msg = await asst.send_message(
         rs.chat_id,
         AYSTRING,
