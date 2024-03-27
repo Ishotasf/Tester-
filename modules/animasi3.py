@@ -5,37 +5,37 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Animasi 3**
+▢ **Bantuan Untuk Animasi 3**
 
-๏ **Perintah:** `gabut` | `dino`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `gabut` | `dino`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `gombal ` | `cinta`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `gombal ` | `cinta`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `tembak` | `bundir`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `tembak` | `bundir`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `bernyanyi` | `awk`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `bernyanyi` | `awk`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `helikopter` | `tank`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `helikopter` | `tank`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `bulan` | `hati`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `bulan` | `hati`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `lar ` | `abi`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `lar ` | `abi`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `bunga` | `buah`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `bunga` | `buah`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `waktu` | `santet`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `waktu` | `santet`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `terkadang` | `ajg`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `terkadang` | `ajg`
+• **Keterangan:** Coba sendiri.
 """
 
 import asyncio
