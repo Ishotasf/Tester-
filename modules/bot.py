@@ -30,84 +30,84 @@ except ImportError:
 
 from telethon.utils import resolve_bot_file_id
 
-piic = "https://graph.org/file/60408fea8439e6702674d.jpg"
+piic = "https://telegra.ph/file/076a5b0475e866132af70.jpg"
 
 buttons = [
     [
-        Button.url(get_string("bot_4"), "t.me/kynansupport"),
+        Button.url(get_string("bot_4"), "t.me/CariSahabatOnline_Id"),
     ]
 ]
 
 WHITE = [
-    1970636001,
-    902478883,
-    2067434944,
-    1947740506,
-    1897354060,
-    1694909518,
-    1755047203,
+    1014948468,
+    1644811803,
+    908020884,
+    936922513,
+    426147177,
+    835478438,
+    814111383,
 ]
 
-BLACK = [1898065191, 1054295664, 1889573907, 2133148961, 2076745088]
+BLACK = [783190289, 7044333581, 1014948468, 1644811803, 908020884]
 
 # Will move to strings
 alive_txt = """
-◈ ᴀʏʀᴀ ꭙ ᴜꜱᴇʀʙᴏᴛ​
+▢ ʀʏɴ ꭙ ᴜꜱᴇʀʙᴏᴛ​
 
-  ◈ Version - {}
-  ◈ Ayra - {}
-  ◈ Telethon - {}
+  ▢ Version - {}
+  ▢ Ryn - {}
+  ▢ Telethon - {}
 """
 
 in_alive = """
-<b> Naya-Userbot</b>
+<b> Ryn-Userbot</b>
 <b> status :</b> <code>{}</code>{}
 <b>   expired_on :</b> <code>{}</code>
 <b>   dc_id :</b> <code>{}</code>
 <b>   ping_dc :</b> <code>{} ms</code>
 <b>   version :</b> <code>{}</code>
-<b>   nayalibs :</b> <code>{}</code>
+<b>   Rynlibs :</b> <code>{}</code>
 <b>   uptime :</b> <code>{}</code>"""
 
 absen = [
-    "**Hadir Sayang** 😳",
-    "**Hadir Bro Kynan** 😁",
-    "**Maaf ka habis nemenin ka Kynan** 🥺",
-    "**Maaf ka habis disuruh Tuan Kynan** 🥺🙏🏻",
-    "**Hadir Kynan Sayang** 😘",
-    "**Hadir Kynan Akuuuuhhh** ☺️",
-    "**Hadir Kynan brother Aku** 🥰",
+    "**Hadir Sayang**",
+    "**Hadir Bos Ryn**",
+    "**Maaf ka habis nemenin ka Ryn**",
+    "**Maaf ka habis disuruh Tuan Ryn**",
+    "**Hadir Ryn Sayang**",
+    "**Hadir Ryn Akuuuuhhh**",
+    "**Hadir Ryn brother Aku**",
     "**Sokap bet lu**",
-    "**Apasi Bawel** 🥰",
+    "**Apasi Bawel**",
 ]
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^Absen$")
-async def kynanabsen(ganteng):
+async def rynabsen(ganteng):
     await ganteng.reply(choice(absen))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^Kynan$")
-async def naya(naya):
-    await naya.reply("**Kynan Punya Nya Naya**🤩")
+@register(incoming=True, from_users=DEVS, pattern=r"^Rynca$")
+async def ryn(ryn):
+    await ryn.reply("**Ryn Punya Nya Caca**")
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^Naya$")
-async def naya(naya):
-    await naya.reply("**Naya Punya Nya Kynan**🤩")
+async def ryn(ryn):
+    await ryn.reply("**Caca Punya Nya Ryn**")
 
 
 @ayra_cmd(pattern=r"^[aA][lL][iI][vV][eE](?: |$)(.*)")
 async def lol(
-    ayra: NewMessage.Event,
+    ryn: NewMessage.Event,
 ):
-    match = ayra.pattern_match.group(1).strip()
+    match = ryn.pattern_match.group(1).strip()
     inline = True
     private_chats = 0
     groups = 0
     remaining_days = None
     dialog: Dialog
-    async for dialog in ayra.client.iter_dialogs():
+    async for dialog in ryn.client.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, User):
             private_chats += 1
@@ -122,7 +122,7 @@ async def lol(
     ping = round((time.time() - start) * 1000)
     if match not in ["n", "no_inline"]:
         try:
-            res = await ayra.client.inline_query(asst.me.username, "alive")
+            res = await ryn.client.inline_query(asst.me.username, "alive")
             return await res[0].click(ayra.chat_id)
         except BotMethodInvalidError:
             pass
@@ -143,8 +143,8 @@ async def lol(
             private_chats,
             groups,
             ping,
-            f"{ayra_version} [{HOSTED_ON}]",
-            AyraVer,
+            f"{ryn_version} [{HOSTED_ON}]",
+            RynVer,
             uptime,
         )
 
@@ -154,8 +154,8 @@ async def lol(
         parse = "md"
         als = (get_string("alive_1")).format(
             header,
-            f"{ayra_version} [{HOSTED_ON}]",
-            AyraVer,
+            f"{ryn_version} [{HOSTED_ON}]",
+            RynVer,
             uptime,
             pyver(),
             __version__,
@@ -166,14 +166,14 @@ async def lol(
             als = als.replace("", a)
     if pic:
         try:
-            await ayra.reply(
+            await ryn.reply(
                 als,
                 file=pic,
                 parse_mode=parse,
                 link_preview=False,
                 buttons=buttons if inline else None,
             )
-            return await ayra.try_delete()
+            return await ryn.try_delete()
         except ChatSendMediaForbiddenError:
             pass
         except BaseException as er:
@@ -186,11 +186,11 @@ async def lol(
                     buttons=buttons if inline else None,
                     link_preview=False,
                 )
-                return await ayra.try_delete()
+                return await ryn.try_delete()
             except BaseException as er:
                 LOGS.exception(er)
     await eor(
-        ayra,
+        ryn,
         als,
         parse_mode=parse,
         link_preview=False,
@@ -205,7 +205,7 @@ async def _(event):
     x = await event.eor("Ping !")
     end = round((time.time() - start) * 1000)
     uptime = time_formatter((time.time() - start_time) * 1000)
-    await x.edit(f"**Pong !!** `{end}ms`\n**Uptime** - `{uptime}`")
+    await x.edit(f"**Sepong !!** `{end}ms`\n**Angee** - `{uptime}`")
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -250,7 +250,7 @@ restart_counter = 0
 )
 @register(incoming=True, from_users=DEVS, pattern=r"^Update")
 async def restart(e):
-    await e.eor("`Processing...`")
+    await e.eor("▢ **Processing...**")
     await bash("git pull")
     await e.eor("Done.")
     os.execl(sys.executable, sys.executable, "-m", "Ayra")
@@ -260,8 +260,8 @@ async def restart(e):
     pattern="^[sS][Hh][Uu][Tt][Dd][Oo][Ww][Nn]$",
     fullsudo=False,
 )
-async def shutdownbot(ayra):
-    await shutdown(ayra)
+async def shutdownbot(ryn):
+    await shutdown(ryn)
 
 
 @ayra_cmd(
@@ -270,7 +270,7 @@ async def shutdownbot(ayra):
 )
 async def _(event):
     opt = event.pattern_match.group(1).strip()
-    file = f"ayra{sys.argv[-1]}.log" if len(sys.argv) > 1 else "ayra.log"
+    file = f"ryn{sys.argv[-1]}.log" if len(sys.argv) > 1 else "ryn.log"
     if opt == "heroku":
         await heroku_logs(event)
     elif opt == "carbon" and Carbon:
@@ -278,13 +278,13 @@ async def _(event):
         with open(file, "r") as f:
             code = f.read()[-2500:]
         file = await Carbon(
-            file_name="naya-logs",
+            file_name="ryn-logs",
             code=code,
             backgroundColor=choice(ATRA_COL),
         )
-        await event.reply("**Naya Logs.**", file=file)
+        await event.reply("**Ryn Logs.**", file=file)
     elif opt == "open":
-        with open("ayra.log", "r") as f:
+        with open("Ryn.log", "r") as f:
             file = f.read()[-4000:]
         return await event.eor(f"`{file}`")
     else:
@@ -312,8 +312,8 @@ async def inline_alive(
         remaining_days,
         ayra_bot.dc_id,
         ping,
-        f"{ayra_version} [{HOSTED_ON}]",
-        AyraVer,
+        f"{ryn_version} [{HOSTED_ON}]",
+        RynVer,
         uptime,
     )
 
@@ -338,7 +338,7 @@ async def inline_alive(
                     await builder.document(
                         pic,
                         title="Inline Alive",
-                        description="↻ꝛɪᴢ",
+                        description="ʀʏɴᴜʙᴏᴛ",
                         parse_mode="html",
                         buttons=buttons,
                     )
