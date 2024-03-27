@@ -396,7 +396,7 @@ async def updava(event):
     await asst.send_file(
         udB.get_key("LOG_CHANNEL"),
         file=piic,
-        caption="• **Pembaruan tersedia** •",
+        caption="▢ **Pembaruan tersedia**",
         force_document=True,
         buttons=Button.inline("Changelog", data="changes"),
     )
