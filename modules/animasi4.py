@@ -1,25 +1,25 @@
 # @mrismanaziz
 # t.me/sharinguserbot
 """
-✘ **Bantuan Untuk Animasi 4**
+▢ **Bantuan Untuk Animasi 4**
 
-๏ **Perintah:** `sadboy` | `pantau`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `sadboy` | `pantau`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `punten ` | `strump`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `punten ` | `strump`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `frog` | `dfrog`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `frog` | `dfrog`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `scina` | `awk`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `scina` | `awk`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `sthink` | `gta`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `sthink` | `gta`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `wlcm`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `wlcm`
+• **Keterangan:** Coba sendiri.
 """
 from time import sleep
 
