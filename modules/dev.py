@@ -66,10 +66,10 @@ async def _(event):
     xx = await event.eor(get_string("com_1"))
     reply_to_id = event.reply_to_msg_id or event.id
     stdout, stderr = await bash(cmd, run_code=1)
-    OUT = f"**☞ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
+    OUT = f"**▢ BASH\n\n• COMMAND:**\n`{cmd}` \n\n"
     err, out = "", ""
     if stderr:
-        err = f"**• LOGS:** \n`{stderr}`\n\n"
+        err = f"**▢ LOGS:** \n`{stderr}`\n\n"
     if stdout:
         if (carb or udB.get_key("CARBON_ON_BASH")) and (
             event.is_private
@@ -80,7 +80,7 @@ async def _(event):
             li = await make_carbon(stdout)
             url = f"https://graph.org{uf(li)[-1]}"
             OUT = f"[\xad]({url}){OUT}"
-            out = "**• OUTPUT:**"
+            out = "**▢ OUTPUT:**"
             remove(li)
         else:
             if "pip" in cmd and all(":" in line for line in stdout.split("\n")):
@@ -98,19 +98,19 @@ async def _(event):
                     LOGS.exception(er)
             else:
                 stdout = f"`{stdout}`"
-            out = f"**• OUTPUT:**\n{stdout}"
+            out = f"**▢ OUTPUT:**\n{stdout}"
     if not stderr and not stdout:
-        out = "**• OUTPUT:**\n`Success`"
+        out = "**▢ OUTPUT:**\n`Success`"
     OUT += err + out
     if len(OUT) > 4096:
-        ayra = err + out
-        with BytesIO(str.encode(ayra)) as out_file:
+        ryn = err + out
+        with BytesIO(str.encode(ryn)) as out_file:
             out_file.name = "bash.txt"
             await event.client.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
-                thumb=AyConfig.thumb,
+                thumb=RyConfig.thumb,
                 allow_cache=False,
                 caption=f"`{cmd}`" if len(cmd) < 998 else None,
                 reply_to=reply_to_id,
@@ -122,7 +122,7 @@ async def _(event):
 
 
 pp = pprint  # ignore: pylint
-bot = ayra = ayra_bot
+bot = ryn = ryn_bot
 
 
 class u: ...
@@ -158,7 +158,7 @@ async def _(event):
         try:
             cm = cmd.split(maxsplit=1)[1]
         except IndexError:
-            await event.eor("->> Wrong Format <<-")
+            await event.eor("Wrong Format")
             cm = None
         return cm
 
@@ -208,7 +208,7 @@ async def _(event):
     evaluation = exc or stderr or stdout or _parse_eval(value) or get_string("instu_4")
     if silent:
         if exc:
-            msg = f"• <b>EVAL ERROR\n\n• CHAT:</b> <code>{get_display_name(event.chat)}</code> [<code>{event.chat_id}</code>]"
+            msg = f"▢ <b>EVAL ERROR\n\n• CHAT:</b> <code>{get_display_name(event.chat)}</code> [<code>{event.chat_id}</code>]"
             msg += f"\n\n∆ <b>CODE:</b>\n<code>{cmd}</code>\n\n∆ <b>ERROR:</b>\n<code>{exc}</code>"
             log_chat = udB.get_key("LOG_CHANNEL")
             if len(msg) > 4000:
@@ -287,29 +287,29 @@ async def doie(e):
     if "main(" not in match:
         new_m = "".join(" " * 4 + i + "\n" for i in match.split("\n"))
         match = DUMMY_CPP.replace("!code", new_m)
-    open("cpp-ayra.cpp", "w").write(match)
+    open("cpp-ryn.cpp", "w").write(match)
     m = await bash("g++ -o CppAyra cpp-ayra.cpp")
-    o_cpp = f"• **Eval-Cpp**\n`{match}`"
+    o_cpp = f"▢ **Eval-Cpp**\n`{match}`"
     if m[1]:
         o_cpp += f"\n\n**• Error :**\n`{m[1]}`"
         if len(o_cpp) > 3000:
-            os.remove("cpp-ayra.cpp")
-            if os.path.exists("CppAyra"):
-                os.remove("CppAyra")
+            os.remove("cpp-ryn.cpp")
+            if os.path.exists("Cppryn"):
+                os.remove("CppRyn")
             with BytesIO(str.encode(o_cpp)) as out_file:
                 out_file.name = "error.txt"
                 return await msg.reply(f"`{match}`", file=out_file)
         return await eor(msg, o_cpp)
-    m = await bash("./CppAyra")
+    m = await bash("./CppRyn")
     if m[0] != "":
-        o_cpp += f"\n\n**• Output :**\n`{m[0]}`"
+        o_cpp += f"\n\n**▢ Output :**\n`{m[0]}`"
     if m[1]:
-        o_cpp += f"\n\n**• Error :**\n`{m[1]}`"
+        o_cpp += f"\n\n**▢ Error :**\n`{m[1]}`"
     if len(o_cpp) > 3000:
         with BytesIO(str.encode(o_cpp)) as out_file:
             out_file.name = "eval.txt"
             await msg.reply(f"`{match}`", file=out_file)
     else:
         await eor(msg, o_cpp)
-    os.remove("CppAyra")
-    os.remove("cpp-ayra.cpp")
+    os.remove("CppRyn")
+    os.remove("cpp-ryn.cpp")
