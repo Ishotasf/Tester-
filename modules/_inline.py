@@ -25,7 +25,7 @@ from ._help import _main_help_menu
 
 # ================================================#
 
-riz = get_string("riz_1")
+ryn = get_string("ryn_1")
 
 helps = get_string("inline_1")
 
@@ -41,8 +41,8 @@ upage = 0
 
 SUP_BUTTONS = [
     [
-        Button.url("• Repo •", url="https://github.com/naya1503/Naya-Userbot"),
-        Button.url("• Support •", url="t.me/kynansupport"),
+        Button.url("Owner", url="https://t.me/Usern4meDoestExist404"),
+        Button.url("Support", url="t.me/CariSahabatOnline_Id"),
     ],
 ]
 
@@ -93,14 +93,14 @@ async def setting(event):
         link_preview=False,
         buttons=[
             [
-                Button.inline("•Pɪɴɢ•", data="pkng"),
-                Button.inline("•Uᴘᴛɪᴍᴇ•", data="upp"),
+                Button.inline("Pɪɴɢ", data="pkng"),
+                Button.inline("Uᴘᴛɪᴍᴇ", data="upp"),
             ],
             [
-                Button.inline("•Stats•", data="alive"),
-                Button.inline("•Uᴘᴅᴀᴛᴇ•", data="doupdate"),
+                Button.inline("Stats", data="alive"),
+                Button.inline("Uᴘᴅᴀᴛᴇ", data="doupdate"),
             ],
-            [Button.inline("❮", data="open")],
+            [Button.inline("◁", data="open")],
         ],
     )
 
@@ -138,7 +138,7 @@ async def uptd_plugin(event):
                 help_ += "\n"
     if not help_:
         help_ = f"{file} has no Detailed Help!"
-    help_ += "\n© @KynanSupport"
+    help_ += "\n© @TeamAllBots"
     data = f"uh_{key}_"
     if index is not None:
         data += f"|{index}"
@@ -162,23 +162,23 @@ async def _(event):
     changelog_str = changelog + "\n\n" + get_string("inline_8")
     if len(changelog_str) > 1024:
         await event.edit(get_string("upd_4"))
-        with open("ayra_updates.txt", "w+") as file:
+        with open("ryn_updates.txt", "w+") as file:
             file.write(tl_chnglog)
         await event.edit(
             get_string("upd_5"),
-            file="ayra_updates.txt",
+            file="ryn_updates.txt",
             buttons=[
                 [Button.inline("Update Sekarang", data="updatenow")],
-                [Button.inline("❮", data="ownr")],
+                [Button.inline("◁", data="ownr")],
             ],
         )
-        remove("ayra_updates.txt")
+        remove("ryn_updates.txt")
     else:
         await event.edit(
             changelog_str,
             buttons=[
                 [Button.inline("Update Sekarang", data="updatenow")],
-                [Button.inline("❮", data="ownr")],
+                [Button.inline("◁", data="ownr")],
             ],
             parse_mode="html",
         )
@@ -211,7 +211,7 @@ async def _(e):
     button = InButtons.copy()
     button.append(
         [
-            Button.inline("❮", data="open"),
+            Button.inline("◁", data="open"),
         ],
     )
     await e.edit(buttons=button, link_preview=False)
@@ -262,11 +262,11 @@ def page_num(index, key):
         new_.append(
             [
                 Button.inline(
-                    "❮",
+                    "◁",
                     data=f"uh_{key}_{index-1}",
                 ),
                 Button.inline(
-                    "❯",
+                    "▷",
                     data=f"uh_{key}_{index+1}",
                 ),
             ]
@@ -319,9 +319,9 @@ async def ibuild(e):
                     results = [
                         await builder.document(
                             _pic,
-                            title="Ayra Op",
+                            title="Ryn Op",
                             text=txt,
-                            description="@Riizzvbss",
+                            description="@Usern4meDoestExist404",
                             buttons=btn,
                             link_preview=False,
                         )
@@ -334,10 +334,10 @@ async def ibuild(e):
                     cont = InputWebDocument(pic, 0, mime_type, [])
                 results = [
                     await builder.article(
-                        title="Ayra Op",
+                        title="Ryn Op",
                         type=_type,
                         text=txt,
-                        description="@Riizzvbss",
+                        description="@Usern4meDoestExist404",
                         include_media=include_media,
                         buttons=btn,
                         thumb=cont,
@@ -349,7 +349,7 @@ async def ibuild(e):
         except Exception as er:
             LOGS.exception(er)
     result = [
-        await builder.article("Ayra Op", text=txt, link_preview=False, buttons=btn)
+        await builder.article("Ryn Op", text=txt, link_preview=False, buttons=btn)
     ]
     await e.answer(result)
 
