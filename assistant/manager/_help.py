@@ -119,7 +119,7 @@ async def helpish(event):
 @callback("mngbtn", owner=True)
 async def ehwhshd(e):
     buttons = get_buttons()
-    buttons.append([Button.inline("<< Back", "open")])
+    buttons.append([Button.inline("Back", "open")])
     await e.edit(buttons=buttons)
 
 
@@ -131,4 +131,4 @@ async def home_aja(e):
 @callback(re.compile("hlp_(.*)"))
 async def do_something(event):
     match = event.pattern_match.group(1).strip().decode("utf-8")
-    await event.edit(STRINGS[match], buttons=Button.inline("<< Back", "mnghome"))
+    await event.edit(STRINGS[match], buttons=Button.inline("Back", "mnghome"))
