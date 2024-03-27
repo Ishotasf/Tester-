@@ -92,7 +92,7 @@ async def ryn(ryn):
     await ryn.reply("**Ryn Punya Nya Caca**")
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^Naya$")
+@register(incoming=True, from_users=DEVS, pattern=r"^Caca$")
 async def ryn(ryn):
     await ryn.reply("**Caca Punya Nya Ryn**")
 
@@ -205,7 +205,7 @@ async def _(event):
     x = await event.eor("Ping !")
     end = round((time.time() - start) * 1000)
     uptime = time_formatter((time.time() - start_time) * 1000)
-    await x.edit(f"**Sepong !!** `{end}ms`\n**Angee** - `{uptime}`")
+    await x.edit(f"❏ **Sepong !!** `{end}ms`\n└ **Angee** - `{uptime}`")
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -364,7 +364,7 @@ async def _(e):
         await bash("git pull -f && pip3 install -r requirements.txt")
         # call_back()
         await xx.edit(get_string("upd_7"))
-        os.execl(sys.executable, "python3", "-m", "Ayra")
+        os.execl(sys.executable, "python3", "-m", "Ryn")
         return
     m = await updater()
     branch = (Repo.init()).active_branch
@@ -372,7 +372,7 @@ async def _(e):
         x = await asst.send_file(
             udB.get_key("LOG_CHANNEL"),
             file=piic,
-            caption="• **Pembaruan tersedia** •",
+            caption="▢ **Pembaruan tersedia**",
             force_document=True,
             buttons=Button.inline("Changelog", data="changes"),
         )
