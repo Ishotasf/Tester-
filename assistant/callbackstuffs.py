@@ -240,7 +240,7 @@ async def update(eve):
     else:
         await eve.edit(get_string("clst_1"))
         await bash("git pull && pip3 install -r requirements.txt")
-        execl(sys.executable, sys.executable, "-m", "Ryn")
+        execl(sys.executable, sys.executable, "-m", "Ayra")
 
 
 @callback(re.compile("changes(.*)"), owner=True)
