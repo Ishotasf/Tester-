@@ -5,22 +5,22 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk VC Tools**
+▢ **Bantuan Untuk VC Tools**
 
-๏ **Perintah:** `startvc`
-◉ **Keterangan:** Memulai obrolan suara.
+• **Perintah:** `startvc`
+• **Keterangan:** Memulai obrolan suara.
 
-๏ **Perintah:** `stopvc`
-◉ **Keterangan:** Mengakhiri obrolan suara.
+• **Perintah:** `stopvc`
+• **Keterangan:** Mengakhiri obrolan suara.
 
-๏ **Perintah:** `vctitle`
-◉ **Keterangan:** Ubah judul obrolan suara.
+• **Perintah:** `vctitle`
+• **Keterangan:** Ubah judul obrolan suara.
 
-๏ **Perintah:** `joinvc`
-◉ **Keterangan:** Bergabung ke obrolan suara.
+• **Perintah:** `joinvc`
+• **Keterangan:** Bergabung ke obrolan suara.
 
-๏ **Perintah:** `leavevc`
-◉ **Keterangan:** Meninggalkan ke obrolan suara.
+• **Perintah:** `leavevc`
+• **Keterangan:** Meninggalkan ke obrolan suara.
 """
 
 import asyncio
@@ -54,10 +54,10 @@ def user_list(l, n):
 async def _(e):
     chat = e.chat_id
     try:
-        ajg = await e.eor("`Processing...`")
+        ajg = await e.eor("▢ **Processing...**")
         await e.client(stopvc(await get_call(e)))
-        await asyncio.sleep(1)
-        await ajg.edit(f"**• Obrolan Suara Diakhiri**\n**- Chat ID** : `{chat}`")
+        await asyncio.sleep(2)
+        await ajg.edit(f"**❏ Obrolan Suara Diakhiri**\n└ **Chat ID** : `{chat}`")
     except Exception as ex:
         await ajg.edit(f"`{ex}`")
 
@@ -70,10 +70,10 @@ async def _(e):
 async def _(e):
     chat = e.chat_id
     try:
-        ajg = await e.eor("`Processing...`")
+        ajg = await e.eor("▢ **Processing...**")
         await e.client(startvc(e.chat_id))
-        await asyncio.sleep(1)
-        await ajg.edit(f"**• Obrolan Suara Aktif**\n**- Chat ID** : `{chat}`")
+        await asyncio.sleep(2)
+        await ajg.edit(f"**❏ Obrolan Suara Aktif**\n└ **Chat ID** : `{chat}`")
     except Exception as ex:
         await ajg.edit(f"`{ex}`")
 
@@ -97,8 +97,8 @@ async def _(event):
 @ayra_cmd(pattern="[Jj][o][i][n][v][c](?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^Jvcs(?: |$)(.*)")
 async def join_(event):
-    if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
+    if len(event.text.split()) > 1.5:
+        chat = event.text.split()[1.5]
         try:
             chat = await event.client.parse_id(chat)
         except Exception as e:
@@ -108,11 +108,11 @@ async def join_(event):
     Nan = Player(chat)
     if not Nan.group_call.is_connected:
         await Nan.group_call.join(chat)
-        await asyncio.sleep(1)
-        await event.eor(f"• **Berhasil Bergabung Voice Chat**\n- **Chat ID:** `{chat}`")
-        await asyncio.sleep(1)
+        await asyncio.sleep(1.5)
+        await event.eor(f"❏ **Berhasil Bergabung Voice Chat**\n└ **Chat ID:** `{chat}`")
+        await asyncio.sleep(2)
         await Nan.group_call.set_is_mute(False)
-        await asyncio.sleep(1)
+        await asyncio.sleep(1.5)
         await Nan.group_call.set_is_mute(True)
 
 
@@ -129,8 +129,8 @@ async def leaver(event):
         chat = event.chat_id
     jing = Player(chat)
     await jing.group_call.leave()
-    await asyncio.sleep(1)
-    await event.eor(f"• **Berhasil Turun Voice Chat**\n- **Chat ID:** `{chat}`")
+    await asyncio.sleep(2)
+    await event.eor(f"❏ **Berhasil Turun Voice Chat**\n└ **Chat ID:** `{chat}`")
     if CLIENTS.get(chat):
         del CLIENTS[chat]
     if VIDEO_ON.get(chat):
