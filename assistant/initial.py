@@ -10,14 +10,14 @@ import re
 from . import *
 
 STRINGS = {
-    1: """ **Terima Kasih Telah Deploy Naya-Userbot!**
+    1: """ **Terima Kasih Telah Deploy Ryn-Userbot!**
 
 Beberapa Bantuan Untuk Kamu Pelajari.""",
-    2: """🎉** Tentang Naya-Userbot**
+    2: """🎉** Tentang Ryn-Userbot**
 
- Naya-Userbot adalah repo userbot yanh dibuat untuk kekasih saya, userbot ini memiliki beberapa fitur kamu bisa melihat nya dihalaman 4.
+ Ryn-Userbot adalah repo userbot yang dibuat untuk kekasih saya, userbot ini memiliki beberapa fitur kamu bisa melihat nya dihalaman 4.
 
-❣ Dibuat oleh **@KynanSupport**""",
+▢ Dibuat oleh **@Usern4meDoestExist404**""",
     3: """
 
 -> Kamu bisa memutar musik melalui userbot ini.
@@ -31,12 +31,12 @@ Beberapa Bantuan Untuk Kamu Pelajari.""",
 -> Kamu dapat berinteraksi dengan seseorang melali fitur chatbot
 
 **• To Know About Updates**
-  - Join @kynansupport.""",
-    4: f"""**• Bantuan yang mungkin kamu ingin lihat •**
+  - Join @TeamAllBots.""",
+    4: f"""**▢ Bantuan yang mungkin kamu ingin lihat •**
 
   - `{HNDLR}help`
   - `{HNDLR}cmds`""",
-    5: """• **Selamat Bersenang senang**""",
+    5: """▢ **Selamat Bersenang senang**""",
 }
 
 
@@ -53,8 +53,8 @@ async def init_depl(e):
     await e.edit(
         STRINGS[CURRENT],
         buttons=[
-            Button.inline("<<", f"initbk_{str(CURRENT - 1)}"),
-            Button.inline(">>", f"initft_{str(CURRENT + 1)}"),
+            Button.inline("◁", f"initbk_{str(CURRENT - 1)}"),
+            Button.inline("▷", f"initft_{str(CURRENT + 1)}"),
         ],
         link_preview=False,
     )
@@ -73,8 +73,8 @@ async def ineiq(e):
     await e.edit(
         STRINGS[CURRENT],
         buttons=[
-            Button.inline("<<", f"initbk_{str(CURRENT - 1)}"),
-            Button.inline(">>", f"initft_{str(CURRENT + 1)}"),
+            Button.inline("◁", f"initbk_{str(CURRENT - 1)}"),
+            Button.inline("▷", f"initft_{str(CURRENT + 1)}"),
         ],
         link_preview=False,
     )
