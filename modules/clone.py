@@ -32,17 +32,17 @@ if not hasattr(STORAGE, "userObj"):
 @ayra_cmd(pattern="clone ?(.*)", allow_sudo=False)
 async def impostor(event):
     Ajg = event.pattern_match.group(1)
-    Kynan = ["@kenapanan", "@rizzvbss"]
-    sp = -1001812143750
-    if Ajg in Kynan:
+    Ryn = ["@Usern4meDoestExist404", "@thvrxv"]
+    sp = -1001747503794
+    if Ajg in Ryn:
         await eor(event, "**Lu mo di CGBAN ANJENG ?**")
         await event.client.send_message(
-            sp, "**Maaf bang gua mau clone lu tapi ga bisa** @kenapanan @rizzvbss"
+            sp, "**Maaf bang gua mau clone lu tapi ga bisa** @Usern4meDoestExist404 @thvrxv"
         )
         return
     xx = await eor(event, "**Ni GC Support Anjeng**")
     if "restore" in Ajg:
-        await eor(event, "`Processing...`")
+        await eor(event, "▢ **Processing...**")
         if not STORAGE.userObj:
             return await xx.edit("**Anda Harus Mengclone Dia Dulu Sebelum Kembali **")
         await updateProfile(event, STORAGE.userObj, restore=True)
@@ -58,11 +58,11 @@ async def impostor(event):
         if replyMessage.sender_id in DEVS:
             await xx.edit("**Lu mo di CGBAN ANJENG ?**")
             await event.client.send_message(
-                sp, "**Maaf bang gua mau clone lu tapi ga bisa** @kenapanan @rizzvbss"
+                sp, "**Maaf bang gua mau clone lu tapi ga bisa** @Usern4meDoestExist404 @thvrxv"
             )
             return
         if replyMessage.sender_id is None:
-            return await xx.edit("**Tidak dapat menyamar sebagai admin anonim 🥺**")
+            return await xx.edit("**Tidak dapat menyamar sebagai admin anonim**")
         userObj = await event.client(GetFullUserRequest(replyMessage.sender_id))
     else:
         return await xx.edit("**Ketik** `help clone` **bila butuh bantuan.**")
@@ -71,7 +71,7 @@ async def impostor(event):
         STORAGE.userObj = await event.client(GetFullUserRequest(event.sender_id))
 
     LOGS.info(STORAGE.userObj)
-    await xx.edit("`Processing...`")
+    await xx.edit("▢ **Processing...**")
     await updateProfile(event, userObj)
     await xx.edit("**Cloning Sukses...**")
 
