@@ -5,22 +5,22 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Broadcast**
+▢ **Bantuan Untuk Broadcast**
 
-๏ **Perintah:** `gcast`
-◉ **Keterangan:** Kirim pesan ke semua obrolan grup.
+• **Perintah:** `gcast`
+• **Keterangan:** Kirim pesan ke semua obrolan grup.
 
-๏ **Perintah:** `gucast`
-◉ **Keterangan:** Kirim pesan ke semua pengguna pribadi.
+• **Perintah:** `gucast`
+• **Keterangan:** Kirim pesan ke semua pengguna pribadi.
 
-๏ **Perintah:** `addbl`
-◉ **Keterangan:** Tambahkan grup ke dalam anti gcast.
+• **Perintah:** `addbl`
+• **Keterangan:** Tambahkan grup ke dalam anti gcast.
 
-๏ **Perintah:** `delbl`
-◉ **Keterangan:** Hapus grup dari daftar anti gcast.
+• **Perintah:** `delbl`
+• **Keterangan:** Hapus grup dari daftar anti gcast.
 
-๏ **Perintah:** `blchat`
-◉ **Keterangan:** Melihat daftar anti gcast.
+• **Perintah:** `blchat`
+• **Keterangan:** Melihat daftar anti gcast.
 """
 import asyncio
 
