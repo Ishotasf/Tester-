@@ -185,9 +185,8 @@ async def _(event):
 
 @ayra_cmd(pattern=r"^[Rr][y][n]$")
 async def _(event):
-    typew = await eor(event, "**Hello, I'm Yoshieki**")
-    sleep(2)
-    await typew.edit("**Siapa Si Yg Ga Kenal Gua?*")
+    typew = await eor(event, "**Hello, I'm Yoshieki Ryn**")
+    await typew.edit("**Siapa Si Yg Ga Kenal Gua?**")
     sleep(2)
     await typew.edit("**Lu Cuma Jadi Kacung Gua Doang.**")
     sleep(2)
