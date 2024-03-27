@@ -88,26 +88,26 @@ async def rynabsen(ganteng):
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^Rynca$")
-async def ryn(ryn):
-    await ryn.reply("**Ryn Punya Nya Caca**")
+async def ayra(ayra):
+    await ayra.reply("**Ryn Punya Nya Caca**")
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^Caca$")
-async def ryn(ryn):
-    await ryn.reply("**Caca Punya Nya Ryn**")
+async def ayra(ayra):
+    await ayra.reply("**Caca Punya Nya Ryn**")
 
 
 @ayra_cmd(pattern=r"^[aA][lL][iI][vV][eE](?: |$)(.*)")
 async def lol(
-    ryn: NewMessage.Event,
+    ayra: NewMessage.Event,
 ):
-    match = ryn.pattern_match.group(1).strip()
+    match = ayra.pattern_match.group(1).strip()
     inline = True
     private_chats = 0
     groups = 0
     remaining_days = None
     dialog: Dialog
-    async for dialog in ryn.client.iter_dialogs():
+    async for dialog in ayra.client.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, User):
             private_chats += 1
@@ -122,7 +122,7 @@ async def lol(
     ping = round((time.time() - start) * 1000)
     if match not in ["n", "no_inline"]:
         try:
-            res = await ryn.client.inline_query(asst.me.username, "alive")
+            res = await ayra.client.inline_query(asst.me.username, "alive")
             return await res[0].click(ayra.chat_id)
         except BotMethodInvalidError:
             pass
@@ -166,14 +166,14 @@ async def lol(
             als = als.replace("", a)
     if pic:
         try:
-            await ryn.reply(
+            await ayra.reply(
                 als,
                 file=pic,
                 parse_mode=parse,
                 link_preview=False,
                 buttons=buttons if inline else None,
             )
-            return await ryn.try_delete()
+            return await ayra.try_delete()
         except ChatSendMediaForbiddenError:
             pass
         except BaseException as er:
@@ -190,7 +190,7 @@ async def lol(
             except BaseException as er:
                 LOGS.exception(er)
     await eor(
-        ryn,
+        ayra,
         als,
         parse_mode=parse,
         link_preview=False,
@@ -270,11 +270,11 @@ async def shutdownbot(ryn):
 )
 async def _(event):
     opt = event.pattern_match.group(1).strip()
-    file = f"ryn{sys.argv[-1]}.log" if len(sys.argv) > 1 else "ryn.log"
+    file = f"ayra{sys.argv[-1]}.log" if len(sys.argv) > 1 else "ryn.log"
     if opt == "heroku":
         await heroku_logs(event)
     elif opt == "carbon" and Carbon:
-        event = await event.eor(get_string("com_1"))
+        event = await event.eor(get_staring("com_1"))
         with open(file, "r") as f:
             code = f.read()[-2500:]
         file = await Carbon(
@@ -312,8 +312,8 @@ async def inline_alive(
         remaining_days,
         ayra_bot.dc_id,
         ping,
-        f"{ryn_version} [{HOSTED_ON}]",
-        RynVer,
+        f"{ayra_version} [{HOSTED_ON}]",
+        AyraVer,
         uptime,
     )
 
@@ -364,7 +364,7 @@ async def _(e):
         await bash("git pull -f && pip3 install -r requirements.txt")
         # call_back()
         await xx.edit(get_string("upd_7"))
-        os.execl(sys.executable, "python3", "-m", "Ryn")
+        os.execl(sys.executable, "python3", "-m", "Ayra")
         return
     m = await updater()
     branch = (Repo.init()).active_branch
