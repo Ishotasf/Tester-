@@ -210,7 +210,7 @@ async def _(event):
     sleep(2)
     await e.edit("**EMANG LU PIKIR**")
     sleep(2)
-    await e.edit("**GUA PEDULI SAMA LU?""")
+    await e.edit("**GUA PEDULI SAMA LU?**")
     sleep(2)
     await e.edit("**HAHAHAHAHA**")
     sleep(2)
