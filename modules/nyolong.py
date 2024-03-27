@@ -36,7 +36,7 @@ LOG_CHANNEL = udB.get_key("LOG_CHANNEL")
 async def get_restriced_msg(event):
     match = event.pattern_match.group(1).strip()
     if not match:
-        await event.eor("`Please provide a link!`", time=5)
+        await event.eor("**Please provide a link!**", time=5)
         return
     xx = await event.eor(get_string("com_1"))
     chat, msg = get_chat_and_msgid(match)
@@ -61,7 +61,7 @@ async def get_restriced_msg(event):
         if message.document.thumbs:
             thumb = await message.download_media(thumb=-1)
         media = await event.client.download_media(message.document)
-        await xx.edit("`Uploading...`")
+        await xx.edit("**Uploading...**")
         uploaded = await event.client.send_file(
             event.chat_id, file=media, caption="**Done.**"
         )
