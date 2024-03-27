@@ -142,7 +142,7 @@ async def uptd_plugin(event):
     data = f"uh_{key}_"
     if index is not None:
         data += f"|{index}"
-    buttons = [[Button.inline("❮", data=data)]]
+    buttons = [[Button.inline("◁", data=data)]]
     try:
         await event.edit(help_, buttons=buttons)
     except Exception as er:
