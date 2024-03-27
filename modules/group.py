@@ -53,7 +53,7 @@ async def _(e):
     if match:
         split = match.split(maxsplit=1)
         request = split[0] in ["r", "request"]
-        title = "Created by Ayra"
+        title = "Created by Yoshieki Ryn"
         if len(split) > 1:
             match = split[1]
             spli = match.split(maxsplit=1)
@@ -79,7 +79,7 @@ async def _(e):
                 ),
             )
         except no_admin:
-            return await e.eor("`Saya bukan admin`", time=10)
+            return await e.eor("**Saya bukan admin**", time=10)
         link = r.link
     else:
         if isinstance(chat, types.Chat):
@@ -93,7 +93,7 @@ async def _(e):
             link = Inv.link
     if link:
         return await e.eor(f"**Link :** {link}")
-    await e.eor("`Gagal mendapatkan link...`")
+    await e.eor("**Gagal mendapatkan link...**")
 
 
 @ayra_cmd(
@@ -107,7 +107,7 @@ async def _(e):
         group_ = group_name.split(" ; ", maxsplit=1)
         group_name = group_[0]
         username = group_[1]
-    xx = await e.eor("`Processing...`")
+    xx = await e.eor("**Processing...**")
     if type_of_group == "b":
         try:
             r = await e.client(
@@ -133,7 +133,7 @@ async def _(e):
             r = await e.client(
                 CreateChannelRequest(
                     title=group_name,
-                    about="Join @KynanSupport",
+                    about="Join @CariSahabatOnline_Id",
                     megagroup=type_of_group != "c",
                 )
             )
@@ -160,7 +160,7 @@ async def _(e):
 
 @ayra_cmd(pattern="[Uu]nbanall$", manager=True, admins_only=True, require="ban_users")
 async def _(event):
-    xx = await event.eor("`Mengumpulkan akun gak guna.`")
+    xx = await event.eor("**Mengumpulkan akun gak guna...**")
     p = 0
     title = (await event.get_chat()).title
     async for i in event.client.iter_participants(
@@ -185,7 +185,7 @@ async def _(event):
     fullsudo=True,
 )
 async def _(event):
-    xx = await event.eor("`Processing...`")
+    xx = await event.eor("**Processing...**")
     input_str = event.pattern_match.group(1).strip()
     p, a, b, c, d, m, n, y, w, o, q, r = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     async for i in event.client.iter_participants(event.chat_id):
