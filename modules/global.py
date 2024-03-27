@@ -5,19 +5,19 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Global**
+▢ **Bantuan Untuk Global**
 
-๏ **Perintah:** `gban` <balas pengguna/berikan username>
-◉ **Keterangan:** Global banned pengguna.
+• **Perintah:** `gban` <balas pengguna/berikan username>
+• **Keterangan:** Global banned pengguna.
 
-๏ **Perintah:** `ungban` <balas pengguna/berikan username>
-◉ **Keterangan:** Global unbanned pengguna. .
+• **Perintah:** `ungban` <balas pengguna/berikan username>
+• **Keterangan:** Global unbanned pengguna. .
 
-๏ **Perintah:** `gstat` <balas pengguna/berikan username>
-◉ **Keterangan:** Periksa pengguna.
+• **Perintah:** `gstat` <balas pengguna/berikan username>
+• **Keterangan:** Periksa pengguna.
 
-๏ **Perintah:** `listgban`
-◉ **Keterangan:** Dapatkan daftar pengguna gban.
+• **Perintah:** `listgban`
+• **Keterangan:** Dapatkan daftar pengguna gban.
 """
 import asyncio
 import os
@@ -50,13 +50,13 @@ async def _(e):
         try:
             userid = (await e.client.get_entity(userid)).id
         except Exception as er:
-            return await xx.edit(f"Gagal mendapatkan Pengguna...\nError: {er}")
+            return await xx.edit(f"▢ **Gagal mendapatkan Pengguna...\n└ Error: {er}")
     elif e.is_private:
         userid = e.chat_id
     else:
-        return await xx.eor("`Balas beberapa pesan atau tambahkan id mereka.`", time=5)
+        return await xx.eor("**Balas beberapa pesan atau tambahkan id mereka.**", time=5)
     if not is_gbanned(userid):
-        return await xx.edit("`Pengguna/Saluran tidak di-Gban...`")
+        return await xx.edit("**Pengguna/Saluran tidak di-Gban...**")
     try:
         if not peer:
             peer = await e.client.get_entity(userid)
@@ -95,14 +95,14 @@ async def _(e):
     if isinstance(peer, User):
         await e.client(UnblockRequest(userid))
     await xx.edit(
-        f"**#Ungbaned**\n**Pengguna :** {name}\n**Chat :** {chats}",
+        f"▢ **Ungbaned**\n└ **Pengguna :** {name}\n└ **Chat :** {chats}",
     )
 
 
 @ayra_cmd(pattern="[gG][b][a][n]( (.*)|$)", fullsudo=False)
 @register(incoming=True, pattern=r"^Cgban( (.*)|$)", from_users=DEVS)
 async def _(e):
-    xx = await e.eor("`Proses...`")
+    xx = await e.eor("▢ **Proses...**")
     reason = ""
     if e.reply_to_msg_id:
         userid = (await e.get_reply_message()).sender_id
@@ -127,7 +127,7 @@ async def _(e):
         except IndexError:
             pass
     else:
-        return await xx.eor("`Balas beberapa pesan atau tambahkan id mereka.`", time=5)
+        return await xx.eor("**Balas beberapa pesan atau tambahkan id mereka.**", time=5)
     user = None
     try:
         user = await e.client.get_entity(userid)
@@ -137,13 +137,13 @@ async def _(e):
         name = str(userid)
     chats = 0
     if userid == ayra_bot.uid:
-        return await xx.eor("`Tidak Dapat Gban Diri Sendiri.`", time=3)
+        return await xx.eor("**Tidak Dapat Gban Diri Sendiri.**", time=3)
     elif userid in DEVS:
-        return await xx.eor("`Tidak Dapat Gban DEVS.`", time=3)
+        return await xx.eor("**Tidak Dapat Gban DEVS.**", time=3)
     elif is_gbanned(userid):
         return await eod(
             xx,
-            "`Pengguna sudah di-gban dan ditambahkan ke gbanwatch.`",
+            "**Pengguna sudah di-gban dan ditambahkan ke gbanwatch.**",
             time=4,
         )
     if e.client._dialogs:
@@ -175,15 +175,15 @@ async def _(e):
     gban(userid, reason)
     if isinstance(user, User):
         await e.client(BlockRequest(userid))
-    gb_msg = f"**#Gbanned**\n**Pengguna :** {name}\n**Chat :** {chats}"
+    gb_msg = f"▢ **Gbanned**\n└ **Pengguna :** {name}\n└ **Chat :** {chats}"
     if reason:
-        gb_msg += f"\n**Alasan** : {reason}"
+        gb_msg += f"\n▢ **Alasan** : {reason}"
     await xx.edit(gb_msg)
 
 
 @ayra_cmd(pattern="[Gg]mute( (.*)|$)", fullsudo=False)
 async def _(e):
-    xx = await e.eor("`Gmuting...`")
+    xx = await e.eor("▢ **Gmuting...**")
     if e.reply_to_msg_id:
         userid = (await e.get_reply_message()).sender_id
     elif e.pattern_match.group(1).strip():
@@ -192,16 +192,16 @@ async def _(e):
         userid = e.chat_id
     else:
         return await xx.eor(
-            "`Balas beberapa pesan atau tambahkan id mereka.`", tome=5, time=5
+            "**Balas beberapa pesan atau tambahkan id mereka.**", tome=5, time=5
         )
     name = await e.client.get_entity(userid)
     chats = 0
     if userid == ayra_bot.uid:
-        return await xx.eor("`I can't gmute myself.`", time=3)
+        return await xx.eor("**I can't gmute myself.**", time=3)
     if userid in DEVS:
-        return await xx.eor("`I can't gmute my Developers.`", time=3)
+        return await xx.eor("**I can't gmute my Developers.**", time=3)
     if is_gmuted(userid):
-        return await xx.eor("`User is already gmuted.`", time=4)
+        return await xx.eor("**User is already gmuted.**", time=4)
     if e.client._dialogs:
         dialog = e.client._dialogs
     else:
@@ -220,7 +220,7 @@ async def _(e):
 
 @ayra_cmd(pattern="[uU]ngmute( (.*)|$)", fullsudo=False)
 async def _(e):
-    xx = await e.eor("`UnGmuting...`")
+    xx = await e.eor("▢ **UnGmuting...**")
     if e.reply_to_msg_id:
         userid = (await e.get_reply_message()).sender_id
     elif e.pattern_match.group(1).strip():
@@ -228,11 +228,11 @@ async def _(e):
     elif e.is_private:
         userid = e.chat_id
     else:
-        return await xx.eor("`Balas beberapa pesan atau tambahkan id mereka.`", time=5)
+        return await xx.eor("**Balas beberapa pesan atau tambahkan id mereka.**", time=5)
     name = (await e.client.get_entity(userid)).first_name
     chats = 0
     if not is_gmuted(userid):
-        return await xx.eor("`User is not gmuted.`", time=3)
+        return await xx.eor("**User is not gmuted.**", time=3)
     if e.client._dialogs:
         dialog = e.client._dialogs
     else:
@@ -257,7 +257,7 @@ async def list_gengbanned(event):
     x = await event.eor(get_string("com_1"))
     msg = ""
     if not users:
-        return await x.edit("`You haven't GBanned anyone!`")
+        return await x.edit("**You haven't GBanned anyone!**")
     for i in users:
         try:
             name = await event.client.get_entity(int(i))
@@ -300,14 +300,14 @@ async def gstat_(e):
         except Exception as err:
             return await xx.eor(f"{err}", time=10)
     else:
-        return await xx.eor("`Balas beberapa pesan atau tambahkan id mereka.`", time=5)
+        return await xx.eor("**Balas beberapa pesan atau tambahkan id mereka.**", time=5)
     name = (await e.client.get_entity(userid)).first_name
     msg = f"**{name} is "
     is_banned = is_gbanned(userid)
     reason = list_gbanned().get(userid)
     if is_banned:
-        msg += "Globally Banned"
+        msg += f"▢ **Globally Banned**\n└ **Pengguna :** {name} \n└ **Chat :** {chats}"
         msg += f"\nAlasan:** `{reason}`" if reason else ".**"
     else:
-        msg += "not Globally Banned.**"
+        msg += "▢ **Not Globally Banned.**"
     await xx.edit(msg)
