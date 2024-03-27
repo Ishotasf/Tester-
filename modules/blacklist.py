@@ -6,16 +6,16 @@
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
-✘ **Bantuan Untuk Blacklist**
+▢ **Bantuan Untuk Blacklist**
 
-๏ **Perintah:** `bl` <kata>
-◉ **Keterangan:** Daftar hitam kan kata didalam grup.
+• **Perintah:** `bl` <kata>
+• **Keterangan:** Daftar hitam kan kata didalam grup.
 
-๏ **Perintah:** `wl` <kata>
-◉ **Keterangan:** Hapus kata dari daftar hitam.
+• **Perintah:** `wl` <kata>
+• **Keterangan:** Hapus kata dari daftar hitam.
 
-๏ **Perintah:** `listbl`
-◉ **Keterangan:** Lihat Semua Daftar Kata Terlarang .
+• **Perintah:** `listbl`
+• **Keterangan:** Lihat Semua Daftar Kata Terlarang .
 """
 
 
