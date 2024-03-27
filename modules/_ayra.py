@@ -9,7 +9,7 @@
 from . import LOG_CHANNEL, Button, asst, ayra_cmd, eor, get_string
 
 REPOMSG = """
-◈ **ʀʏɴ ꭙ ᴜꜱᴇʀʙᴏᴛ​** ◈\n
+▢ **ʀʏɴ ꭙ ᴜꜱᴇʀʙᴏᴛ​** ▢\n
 ▢ Owner - [Click Here](https://t.me/Usern4meDoestExist404)
 ▢ Support - @CariSahabatVirtual_Id
 """
