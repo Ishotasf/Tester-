@@ -37,7 +37,7 @@ from . import (LOGS, OWNER_NAME, ayra_bot, ayra_cmd, eod, get_string,
 @ayra_cmd(pattern="[uU][n][g][b][a][n]( (.*)|$)", fullsudo=False)
 @register(incoming=True, pattern=r"^Cungban( (.*)|$)", from_users=DEVS)
 async def _(e):
-    xx = await e.eor("`Proses...`")
+    xx = await e.eor("**Proses...**")
     match = e.pattern_match.group(1).strip()
     peer = None
     if e.reply_to_msg_id:
@@ -175,7 +175,7 @@ async def _(e):
     gban(userid, reason)
     if isinstance(user, User):
         await e.client(BlockRequest(userid))
-    gb_msg = f"▢ **Gbanned**\n└ **Pengguna :** {name}\n└ **Chat :** {chats}"
+    gb_msg = f"▢ **Gbanned**\n└ **Pengguna :** {name}\n**Chat :** {chats}"
     if reason:
         gb_msg += f"\n▢ **Alasan** : {reason}"
     await xx.edit(gb_msg)
@@ -306,7 +306,7 @@ async def gstat_(e):
     is_banned = is_gbanned(userid)
     reason = list_gbanned().get(userid)
     if is_banned:
-        msg += f"▢ **Globally Banned**\n└ **Pengguna :** {name} \n└ **Chat :** {chats}"
+        msg += f"▢ **Globally Banned**\n└ **Pengguna :** {name}\n**Chat :** {chats}"
         msg += f"\nAlasan:** `{reason}`" if reason else ".**"
     else:
         msg += "▢ **Not Globally Banned.**"
