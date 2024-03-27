@@ -36,7 +36,7 @@ if Owner_info_msg is None:
 
 **Message Forwards** - {udB.get_key("PMBOT")}
 
-**By Kynan Join @KynanSupport**
+**By Ryn Join @CariSahabatOnline_Id**
 """
 
 _settings = [
@@ -75,14 +75,14 @@ restart_counter = 0
 @callback("restart", owner=True)
 async def restart_callback(e):
     global restart_counter
-    ok = await e.reply("`Processing...`")
+    ok = await e.reply("**Processing...**")
     who = "bot" if e.client._bot else "user"
     udB.set_key("_RESTART", f"{who}_{e.chat_id}_{ok.id}")
     if heroku_api and restart_counter < 10:
         restart_counter += 1
     #        return await restart_callback(e)
     await bash("git pull && pip3 install -r requirements.txt")
-    os.execl(sys.executable, sys.executable, "-m", "Ayra")
+    os.execl(sys.executable, sys.executable, "-m", "Ryn")
 
 
 @asst_cmd(pattern=r"setvar (\S+)\s+(\S+)", owner=True)
@@ -132,7 +132,7 @@ async def own(event):
         mention=event.sender.mention, me=inline_mention(ayra_bot.me)
     )
     if custom_info:
-        msg += "\n\n• Powered by **@kynansupport**"
+        msg += "\n\n▢ Powered by **@Usern4meDoestExist404**"
     await event.edit(
         msg,
         buttons=[Button.inline("Tutup", data="closeit")],
@@ -176,7 +176,7 @@ async def ayra(event):
             if udB.get_key("PMBOT"):
                 ok = "Anda dapat menghubungi Owner saya menggunakan bot ini!!\n\nKirim Pesan Anda, saya akan Kirim ke Owner."
             await event.reply(
-                f"Hey {mention}, Aku Adalah Ayra Asissten {me}!\n\n{ok}",
+                f"Hey {mention}, Aku Adalah Ryn Asissten {me}!\n\n{ok}",
                 file=udB.get_key("STARTMEDIA"),
                 buttons=(
                     [Button.inline("Info.", data="ownerinfo")]
@@ -227,7 +227,7 @@ async def ayra(event):
 @callback("stat", owner=True)
 async def botstat(event):
     ok = len(get_all_users("BOT_USERS"))
-    msg = """Naya-Userbot Assistant - Stats
+    msg = """Ryn-Userbot Assistant - Stats
 Total Users - {}""".format(
         ok,
     )
