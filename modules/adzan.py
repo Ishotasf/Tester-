@@ -6,10 +6,10 @@
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 
 """
-✘ **Bantuan Untuk Adzan**
+▢ **Bantuan Untuk Adzan**
 
-๏ **Perintah:** `adzan` <nama kota>
-◉ **Keterangan:** Dapatkan jadwal adzan.
+• **Perintah:** `adzan` <nama kota>
+• **Keterangan:** Dapatkan jadwal adzan.
 """
 import json
 
