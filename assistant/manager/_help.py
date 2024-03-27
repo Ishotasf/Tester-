@@ -8,13 +8,13 @@
 from . import *
 
 START = """
-◈ **Help Menu** ◈
+▢ **Help Menu** 
 
-✘  /start : Check I am Alive or not.
-✘  /help : Get This Message.
-✘  /repo : Get Bot's Repo..
+▢  /start : Check I am Alive or not.
+▢  /help : Get This Message.
+▢  /dev : Get The Username Developer...
 
-🧑‍💻 Join **@stufsupport**
+🧑‍💻 Developer **@Usern4meDoestExist404**
 """
 
 ADMINTOOLS = """✘ **AdminTools** ✘
