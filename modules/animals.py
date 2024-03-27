@@ -5,13 +5,13 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Animals**
+▢ **Bantuan Untuk Animals**
 
-๏ **Perintah:** `dog`
-◉ **Keterangan:** Mencari gambar anjing.
+• **Perintah:** `dog`
+• **Keterangan:** Mencari gambar anjing.
 
-๏ **Perintah:** `cat`
-◉ **Keterangan:** Mencari gambar kucing.
+• **Perintah:** `cat`
+• **Keterangan:** Mencari gambar kucing.
 """
 
 import requests
@@ -21,7 +21,7 @@ from . import *
 
 @ayra_cmd(pattern="^[Ss][Hh][Ii][Bb][Ee]$")
 async def shibe(event):
-    xx = await event.eor("`Processing...`")
+    xx = await event.eor("▢ **Processing...**")
     response = requests.get("https://shibe.online/api/shibes").json()
     if not response:
         await event.edit("**Tidak bisa menemukan gambar Anjing.**")
@@ -32,7 +32,7 @@ async def shibe(event):
 
 @ayra_cmd(pattern="^[Cc][Aa][Tt]$")
 async def cats(event):
-    xx = await event.eor("`Processing...`")
+    xx = await event.eor("▢ **Processing...**")
     response = requests.get("https://shibe.online/api/cats").json()
     if not response:
         await event.edit("**Tidak bisa menemukan gambar Kucing.**")
