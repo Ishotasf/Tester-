@@ -5,15 +5,15 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Culik**
+▢ **Bantuan Untuk Culik**
 
-๏ **Perintah:** `invite` <id pengguna>
-◉ **Keterangan:** Culik 1 member.
+• **Perintah:** `invite` <id pengguna>
+• **Keterangan:** Culik 1 member.
 
-๏ **Perintah:** `inviteall` <username grup>
-◉ **Keterangan:** Culik banyak member dari grup tersebut.
+• **Perintah:** `inviteall` <username grup>
+• **Keterangan:** Culik banyak member dari grup tersebut.
 
-◉ **Notes:** Fitur Ini Dilarang Keras Untuk IDC 5 & 6 Karena Akun Anda Akan Ter-Deak.
+• **Notes:** Fitur Ini Dilarang Keras Untuk IDC 5 & 6 Karena Akun Anda Akan Ter-Deak.
 """
 
 
@@ -48,17 +48,17 @@ async def get_chatinfo(event):
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
-            await eor(event, "`Grup tidak ditemukan...`")
+            await eor(event, "**Grup tidak ditemukan...**")
             return None
         except ChannelPrivateError:
-            await eod(event, "`Sepertinya Grup Private...`")
+            await eod(event, "**Sepertinya Grup Private...**")
 
             return None
         except ChannelPublicGroupNaError:
-            await eod(event, "`Grup tidak ditemukan...`")
+            await eod(event, "**Grup tidak ditemukan...**")
             return None
         except (TypeError, ValueError):
-            await eod(event, "`Grup tidak ditemukan...`")
+            await eod(event, "**Grup tidak ditemukan...**")
             return None
     return chat_info
 
@@ -100,7 +100,7 @@ async def _(event):
                 except Exception as e:
                     return await eor(event, f"**Error** : `{e}`.")
 
-        await eor(event, "`Sukses Nyulik Untung Ga Deak...`")
+        await eor(event, "**Sukses Nyulik Untung Ga Deak...**")
 
 
 # inviteall Ported By @VckyouuBitch
@@ -112,16 +112,16 @@ async def _(event):
 async def get_users(event):
     ajgg = event.text[11:]
     chat_ajgg = ajgg.lower()
-    restricted = ["@KynanSupport", "@kynansupport"]
+    restricted = ["@Cari_Teman_Virtual_Online_Id", "@CariSahabatOnline_Id"]
     if chat_ajgg in restricted:
         await eor(event, "**Dilarang nyulik member dari sana om.**")
-        await event.client.send_message(-1001812143750, "**Mo nyulik kaga bisa.**")
+        await event.client.send_message(-1001705041312, "**Mo nyulik kaga bisa.**")
 
         return
     if not ajgg:
-        return await eor(event, "`Berikan username grup...`")
+        return await eor(event, "**Berikan username grup...**")
 
-    ayraa = await eor(event, "`Processing....`")
+    ayraa = await eor(event, "▢ **Processing....**")
     babi = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
@@ -130,17 +130,17 @@ async def get_users(event):
     s = 0
     f = 0
     error = "None"
-    await ayraa.edit("`Processing...`")
+    await ayraa.edit("▢ **Processing...**")
     async for user in event.client.iter_participants(babi.full_chat.id):
         try:
             await event.client(InviteToChannelRequest(channel=chat, users=[user.id]))
             s += 1
             await ayraa.edit(
-                f"`Processing...`\n\n• **Menambahkan** `{s}` **orang** \n• **Gagal Menambahkan** `{f}` **orang**\n\n** Error:** `{error}`"
+                f"▢ **Processing...**\n\n❏ **Menambahkan** `{s}` **orang** \n└ **Gagal Menambahkan** `{f}` **orang**\n\n** Error:** `{error}`"
             )
         except Exception as e:
             error = str(e)
             f += 1
     return await ayraa.edit(
-        f"**Terminal Selesai** \n\n• **Berhasil Menambahkan** `{s}` **orang** \n• **Gagal Menambahkan** `{f}` **orang**"
+        f"**Terminal Selesai** \n\n❏ **Berhasil Menambahkan** `{s}` **orang** \n└ **Gagal Menambahkan** `{f}` **orang**"
     )
