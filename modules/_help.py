@@ -5,11 +5,11 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-from Ryn.dB._core import LIST
+from Ayra.dB._core import LIST
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
 from telethon.tl.custom import Button
 
-from . import HNDLR, asst, ryn_cmd, get_string
+from . import HNDLR, asst, ayra_cmd, get_string
 
 _main_help_menu = [
     [
@@ -19,9 +19,9 @@ _main_help_menu = [
 
 
 @ayra_cmd(pattern="^[Hh][Ee][Ll][Pp]( (.*)|$)")
-async def _help(ryn):
-    plug = ryn.pattern_match.group(1).strip()
-    chat = await ryn.get_chat()
+async def _help(ayra):
+    plug = ayra.pattern_match.group(1).strip()
+    chat = await ayra.get_chat()
     if plug:
         try:
             x = get_string("help_11").format(plug)
@@ -29,13 +29,13 @@ async def _help(ryn):
                 x += HNDLR + d
                 x += "\n"
                 x += "\n© @CariSahabatOnline_Id"
-                await ryn.eor(x)
+                await ayra.eor(x)
         except BaseException as e:
-            await ryn.eor(f"{e}")
+            await ayra.eor(f"{e}")
     else:
         try:
-            results = await ryn.client.inline_query(asst.me.username, "help")
+            results = await ayra.client.inline_query(asst.me.username, "help")
         except BotInlineDisabledError:
-            return await ryn.eor(get_string("help_3"))
-        await results[0].click(chat.id, reply_to=ryn.reply_to_msg_id)
-        await ryn.delete()
+            return await ayra.eor(get_string("help_3"))
+        await results[0].click(chat.id, reply_to=ayra.reply_to_msg_id)
+        await ayra.delete()
