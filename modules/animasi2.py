@@ -5,22 +5,22 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Animasi 2**
+▢ **Bantuan Untuk Animasi 2**
 
-๏ **Perintah:** `nah`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `nah`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `huh `
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `huh `
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `hua`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `hua`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `owner`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `owner`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `ceritacinta/canda`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `ceritacinta/canda`
+• **Keterangan:** Coba sendiri.
 """
 
 import asyncio
