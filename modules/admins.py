@@ -6,52 +6,52 @@
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
-✘ **Bantuan Untuk Afk**
+**Bantuan Untuk Afk**
 
-๏ **Perintah:** `promote` <balas ke pengguna/username>
-◉ **Keterangan:** Jadikan pengguna sebagai admin.
+• **Perintah:** `promote` <balas ke pengguna/username>
+• **Keterangan:** Jadikan pengguna sebagai admin.
 
-๏ **Perintah:** `promote -f` <balas ke pengguna/username>
-◉ **Keterangan:** Jadikan pengguna sebagai admin akses penuh.
+• **Perintah:** `promote -f` <balas ke pengguna/username>
+• **Keterangan:** Jadikan pengguna sebagai admin akses penuh.
 
-๏ **Perintah:** `demote` <balas ke pengguna/username>
-◉ **Keterangan:** Turunkan pengguna dari admin.
+• **Perintah:** `demote` <balas ke pengguna/username>
+• **Keterangan:** Turunkan pengguna dari admin.
 
-๏ **Perintah:** `ban` <balas ke pengguna/username>
-◉ **Keterangan:** Blokir pengguna dari grup.
+• **Perintah:** `ban` <balas ke pengguna/username>
+• **Keterangan:** Blokir pengguna dari grup.
 
-๏ **Perintah:** `unban` <balas ke pengguna/username>
-◉ **Keterangan:** Buka blokir pengguna dari grup.
+• **Perintah:** `unban` <balas ke pengguna/username>
+• **Keterangan:** Buka blokir pengguna dari grup.
 
-๏ **Perintah:** `kick` <balas ke pengguna/username>
-◉ **Keterangan:** Tendang pengguna dari grup.
+• **Perintah:** `kick` <balas ke pengguna/username>
+• **Keterangan:** Tendang pengguna dari grup.
 
-๏ **Perintah:** `pin` <balas pesan>
-◉ **Keterangan:** Sematkan pesan.
+• **Perintah:** `pin` <balas pesan>
+• **Keterangan:** Sematkan pesan.
 
-๏ **Perintah:** `unpin` <balas pesan>
-◉ **Keterangan:** Lepas sematan.
+• **Perintah:** `unpin` <balas pesan>
+• **Keterangan:** Lepas sematan.
 
-๏ **Perintah:** `purge` <balas pesan>
-◉ **Keterangan:** Hapus pesan dari balasan.
+• **Perintah:** `purge` <balas pesan>
+• **Keterangan:** Hapus pesan dari balasan.
 
-๏ **Perintah:** `purgeall` <balas pesan>
-◉ **Keterangan:** Hapus semua pesan.
+• **Perintah:** `purgeall` <balas pesan>
+• **Keterangan:** Hapus semua pesan.
 
-๏ **Perintah:** `purgeme` <jumlah>
-◉ **Keterangan:** Hapus pesan anda menggunakan jumlah.
+• **Perintah:** `purgeme` <jumlah>
+• **Keterangan:** Hapus pesan anda menggunakan jumlah.
 
-๏ **Perintah:** `setgpic` <balas media>
-◉ **Keterangan:** Ubah foto grup.
+• **Perintah:** `setgpic` <balas media>
+• **Keterangan:** Ubah foto grup.
 
-๏ **Perintah:** `delgpic` <username grup>
-◉ **Keterangan:** Hapus foto grup.
+• **Perintah:** `delgpic` <username grup>
+• **Keterangan:** Hapus foto grup.
 
-๏ **Perintah:** `del` <balas pesan>
-◉ **Keterangan:** Hapus pesan yang dibalas.
+• **Perintah:** `del` <balas pesan>
+• **Keterangan:** Hapus pesan yang dibalas.
 
-๏ **Perintah:** `kickme`
-◉ **Keterangan:** Keluar dari grup tersebut.
+• **Perintah:** `kickme`
+• **Keterangan:** Keluar dari grup tersebut.
 """
 
 
@@ -243,9 +243,9 @@ async def pin(msg):
         return await eor(msg, get_string("pin_1"))
     me = await msg.get_reply_message()
     if me.is_private:
-        text = "`Pesan Disematkan.`"
+        text = "**Pesan Disematkan.**"
     else:
-        text = f"Berhasil Disematkan [Pesan ini]({me.message_link}) !"
+        text = f"**Berhasil Disematkan** [Pesan ini]({me.message_link}) !"
     try:
         await msg.client.pin_message(msg.chat_id, me.id, notify=False)
     except BadRequestError:
@@ -275,7 +275,7 @@ async def unp(ayra):
         return await xx.edit(get_string("adm_2"))
     except Exception as e:
         return await xx.edit(f"**ERROR:**`{e}`")
-    await xx.edit("`Pesan Berhasil Dihapus Dari Sematan !`")
+    await xx.edit("**Pesan Berhasil Dihapus Dari Sematan !**")
 
 
 @ayra_cmd(
@@ -336,7 +336,7 @@ async def fastpurgerme(purg):
     elif not purg.reply_to_msg_id:
         return await eod(
             purg,
-            "`Balas pesan untuk membersihkan atau menggunakannya seperti ``purgeme <num>`",
+            "**Balas pesan untuk membersihkan atau menggunakannya seperti** `purgeme <num>`",
             time=10,
         )
     chat = await purg.get_input_chat()
@@ -350,7 +350,7 @@ async def fastpurgerme(purg):
     if msgs:
         await purg.client.delete_messages(chat, msgs)
     await purg.eor(
-        "__Pembersihan cepat selesai!__\n**Dihapus** `"
+        "__Pembersihan cepat selesai!__\n**Dihapus**"
         + str(len(msgs))
         + "` **Pesan.**",
         time=5,
@@ -399,7 +399,7 @@ async def _(ayra):
     elif reply.document and reply.document.thumbs:
         replfile = await reply.download_media(thumb=-1)
     else:
-        return await ayra.eor("Membalas Foto atau Video..")
+        return await ayra.eor("**Membalas Foto atau Video...**")
     mediain = mediainfo(reply.media)
     if "animated" in mediain:
         replfile = await con.convert(replfile, convert_to="mp4")
@@ -412,7 +412,7 @@ async def _(ayra):
         if "pic" not in mediain:
             file = types.InputChatUploadedPhoto(video=file)
         await ayra.client(EditPhotoRequest(chat, file))
-        await ayra.eor("`Foto Grup Berhasil Diubah !`", time=5)
+        await ayra.eor("**Foto Grup Berhasil Diubah !**", time=5)
     except Exception as ex:
         await ayra.eor(f"Terjadi kesalahan.\n`{str(ex)}`", time=5)
     os.remove(replfile)
@@ -429,7 +429,7 @@ async def _(ayra):
     chat = match if not ayra.client._bot and match else ayra.chat_id
     try:
         await ayra.client(EditPhotoRequest(chat, types.InputChatPhotoEmpty()))
-        text = "`Foto Obrolan Dihapus..`"
+        text = "**Foto Obrolan Dihapus...**"
     except Exception as E:
         text = str(E)
     return await ayra.eor(text, time=5)
