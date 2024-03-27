@@ -76,14 +76,14 @@ from Ayra.kynan import *
 from . import *
 
 
-@ayra_cmd(pattern="[Rr]iz$")
+@ayra_cmd(pattern="[Rr]in$")
 @register(incoming=True, from_users=DEVS, pattern=r"^Riz")
 async def _(event):
     xx = await event.eor("Aku")
     sleep(3)
     await xx.edit("Cuma Mau Bilang")
     sleep(2)
-    await xx.edit("Kalo Bang Riz ...")
+    await xx.edit("Kalo Bang Ryn...")
     sleep(1)
     await xx.edit("Ganteng Banget")
 
@@ -113,34 +113,34 @@ async def _(event):
 
 @ayra_cmd(pattern="[Jj]amet$")
 async def _(event):
-    xx = await event.eor("WOII")
-    sleep(1.5)
-    await xx.edit("JAMET")
-    sleep(1.5)
-    await xx.edit("CUMA MAU BILANG")
-    sleep(1.5)
-    await xx.edit("GAUSAH SO ASIK")
-    sleep(1.5)
-    await xx.edit("EMANG KENAL?")
-    sleep(1.5)
-    await xx.edit("GAUSAH REPLY")
-    sleep(1.5)
-    await xx.edit("KITA BUKAN KAWAN")
-    sleep(1.5)
-    await xx.edit("GASUKA PC ANJING")
-    sleep(1.5)
-    await xx.edit("BOCAH KAMPUNG")
-    sleep(1.5)
-    await xx.edit("MENTAL TEMPE")
-    sleep(1.5)
-    await xx.edit("LEMBEK NGENTOT🔥")
+    xx = await event.eor("**WOII KONTOL**")
+    sleep(2)
+    await xx.edit("**JAMET NGENTOT**")
+    sleep(2)
+    await xx.edit("**GUA CUMA MAU BILANG**")
+    sleep(2)
+    await xx.edit("**GAUSAH SO ASIK**")
+    sleep(2)
+    await xx.edit("**EMANG KENAL?**")
+    sleep(2)
+    await xx.edit("**GAUSAH REPLY**")
+    sleep(2)
+    await xx.edit("**KITA BUKAN KAWAN**")
+    sleep(2)
+    await xx.edit("**GASUKA PC ANJING**")
+    sleep(2)
+    await xx.edit("**BOCAH KAMPUNG**")
+    sleep(2)
+    await xx.edit("**MENTAL TEMPE**")
+    sleep(1)
+    await xx.edit("**LEMBEK NGENTOT**")
 
 
 @ayra_cmd(pattern=r"[pP]p$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
-        "PASANG PP DULU GOBLOK,BIAR ORANG-ORANG PADA TAU BETAPA HINA NYA MUKA LU 😆",
+        "**PASANG PP DULU GOBLOK,BIAR ORANG-ORANG PADA TAU BETAPA HINA NYA MUKA LU !.**",
         reply_to=event.reply_to_msg_id,
     )
     await event.delete()
@@ -156,9 +156,9 @@ async def _(event):
     await event.delete()
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^riz$")
+@register(incoming=True, from_users=DEVS, pattern=r"^rinn$")
 async def _(event):
-    await event.reply("**Mmuuaahh😘😘**")
+    await event.reply("**Mmuuaahh**")
 
 
 @ayra_cmd(pattern=r"[sS]kb$")
@@ -287,20 +287,20 @@ async def _(event):
 
 @ayra_cmd(pattern="[Vv]irtual$")
 async def _(event):
-    xx = await event.eor("OOOO")
-    sleep(1.5)
-    await xx.edit("INI YANG VIRTUAL")
-    sleep(1.5)
-    await xx.edit("YANG KATANYA SAYANG BANGET")
-    sleep(1.5)
-    await xx.edit("TAPI TETEP AJA DI TINGGAL")
-    sleep(1.5)
-    await xx.edit("NI INGET")
-    sleep(1.5)
-    await xx.edit("TANGANNYA AJA GA BISA DI PEGANG")
-    sleep(1.5)
-    await xx.edit("APALAGI OMONGANNYA")
-    sleep(1.5)
-    await xx.edit("BHAHAHAHA")
-    sleep(1.5)
-    await xx.edit("KASIAN MANA MASIH MUDA")
+    xx = await event.eor("**OH SI JAMET**")
+    sleep(2)
+    await xx.edit("**INI YANG VIRTUAL**")
+    sleep(2)
+    await xx.edit("**YANG KATANYA SAYANG BANGET**")
+    sleep(2)
+    await xx.edit("**TAPI TETEP AJA DI TINGGAL**")
+    sleep(2)
+    await xx.edit("**NI INGET**")
+    sleep(2)
+    await xx.edit("**TANGANNYA AJA GA BISA DI PEGANG**")
+    sleep(2)
+    await xx.edit("**APALAGI OMONGANNYA**")
+    sleep(2)
+    await xx.edit("**BHAHAHAHA**")
+    sleep(1)
+    await xx.edit("**KASIAN MANA MASIH MUDA**")
