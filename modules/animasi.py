@@ -5,19 +5,19 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 """
-✘ **Bantuan Untuk Animasi**
+▢ **Bantuan Untuk Animasi**
 
-๏ **Perintah:** `skull`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `skull`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `wlc`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `wlc`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `klb`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `klb`
+• **Keterangan:** Coba sendiri.
 
-๏ **Perintah:** `fucek`
-◉ **Keterangan:** Coba sendiri.
+• **Perintah:** `fucek`
+• **Keterangan:** Coba sendiri.
 """
 
 from . import *
