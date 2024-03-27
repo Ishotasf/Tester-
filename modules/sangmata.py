@@ -60,7 +60,7 @@ async def _(event):
 async def lastname(steal):
     mat = steal.pattern_match.group(1).strip()
     if not steal.is_reply and not mat:
-        return await steal.eor("`Balas Ke Pengguna/Berikan Username atau ID.`")
+        return await steal.eor("**Balas Ke Pengguna/Berikan Username atau ID.**")
     if mat:
         try:
             user_id = await steal.client.parse_id(mat)
@@ -80,7 +80,7 @@ async def lastname(steal):
             except YouBlockedUserError:
                 return await lol.edit("Buka Blokir @SangMata_beta_bot dan Coba Lagi.")
             if response and response.text == "No":
-                await lol.edit("No records found for this user")
+                await lol.edit("Oh Akun Baru Dasar Jamet Tele Ngentot.")
                 await steal.client.delete_messages(conv.chat_id, [msg.id, response.id])
             elif response.text.startswith("History"):
                 await lol.edit(response.message)
